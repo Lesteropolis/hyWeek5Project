@@ -1,0 +1,356 @@
+//Import setup
+@import "_setup.scss";
+
+//Variables
+$green: #67CA8F;
+$black: #555555;
+$salmon: #F2634F;
+$netflixRed: #B9090B;
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-family: 'Oswald', sans-serif;
+	color: #555555;
+}
+
+h1, h2, h3, a {
+	text-transform: uppercase;
+}
+
+h1 {
+	font-size: 6rem;
+	padding: 0;
+	margin: 0;
+}
+
+h2 {
+	font-size: 3.6rem;
+	color: $salmon;
+}
+
+h3 {
+	font-size: 1.8rem;
+}
+
+a {
+	text-decoration: none;
+	font-size: 1.8rem;
+}
+
+p {
+	font-size: 1.8rem;
+	font-family: 'Open Sans', sans-serif;
+}
+
+input[type=radio]{
+	display: none;
+}
+
+
+section {
+	padding: 6rem;
+}
+
+svg {
+	width: 200px;
+	height: 200px;
+}
+
+svg:hover {
+	fill: $green;
+	cursor: pointer; 
+	
+}
+
+
+.wrapper {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+//HEADER
+header {
+	background: 
+	     linear-gradient(
+	        rgba(0, 0, 0, 0.5),
+	        rgba(0, 0, 0, 0.5)
+	     ),
+	     url(../images/netflixhero.jpeg) top center no-repeat fixed; 
+	  height: 100vh;
+	  background-size: cover;
+	text-align: center;
+	// padding: 50px;
+	color: white;
+	p {
+		font-size: 3rem;	
+		padding:0;
+		margin: 0;
+	}
+	
+	.started {
+		margin-top: 8rem;
+	}
+	.started a {
+		background: #B9090B;
+		color: #fff;
+		border-radius: 10px;
+		padding: 20px 40px;
+		margin: 10px;
+		line-height: 1;
+	}
+
+	.started a:hover {
+		background: #fff;
+		color: $netflixRed;
+	}
+}
+
+.funny {
+	color: #fff;
+	font-size: 3rem;
+}
+
+.funny:hover{
+	color: $netflixRed;
+}
+
+.selected {
+	fill: $green;
+}
+
+.headerFlex {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	padding: 10vh;
+}
+
+.chiliLogo {
+	img {
+		width:300px;
+	}
+	
+}
+
+
+
+//SECTION.QUESTIONS
+section.question1, section.question2 {
+	text-align: center;
+}
+
+
+
+section.question1 {
+
+	img { 
+		width: 200px;
+		height: 200px;
+	}
+}
+
+.submit a {
+	background-color: $salmon;
+	color: #fff;
+	border-radius: 10px;
+	padding: 20px;
+	margin: 10px;
+	line-height: 1;
+}
+
+.submit a:hover {
+	color: #000;
+}
+
+section.question2 {
+
+	img {
+		width: 200px;
+		height: 200px;
+	}
+}
+
+.questionContainer1 {
+	display: flex;
+	flex-wrap: wrap;
+	& > * {
+		flex: 1 0 33%;
+	}
+}
+
+.questionContainer2 {
+	display: flex;
+	flex-wrap: wrap;
+	& > * {
+		flex: 1 0 50%;
+	}
+}
+
+//SECTION.RESULTS
+section.results {
+	text-align: center;
+	h2 {
+		text-align: center;
+	}
+
+	h3 {
+		font-size: 3rem;
+	}
+
+	a {
+		color: $green;
+	}
+
+	a:hover {
+		color: $netflixRed;
+	}
+}
+
+.movieContainer {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	& > * {
+		flex: 1 0 50%;
+	}
+
+	p, h3 {
+		text-align: left;
+	}
+}
+
+.chiliContainer {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	padding-bottom: 8rem;
+	& > * {
+		flex: 1 0 50%;
+	}
+
+	p, h3 {
+		text-align: left;
+	}
+
+
+}
+
+//FOOTER
+footer {
+	text-align: center;
+	color: white;
+	background: #141414;
+	padding: 1rem;
+}
+
+.alert {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(255,255,255,0.9);
+	z-index: 100;
+
+	.message {
+		position: absolute; 
+		top: 50%;
+		text-align: center;
+		left: 0;
+		right: 0;
+		font-size: 4rem;
+	}
+}
+
+
+.hidden {
+	display: none;
+}
+
+#cool {
+	padding-top: 10rem 0;
+}
+
+#cool input {
+	background-color: $green;
+	color: #fff;
+	border-radius: 10px;
+	padding: 20px;
+	margin: 10px;
+	font-size: 2rem;
+	transition: 0.5s ease;
+}
+
+#cool input:hover {
+	background: #000;
+	transition: 0.5s ease;
+}
+
+.line {
+	border-bottom: 2px solid $green;
+	width:50%;
+	margin: 0 auto;
+}
+
+//MEDIA QUERIES
+/* Portrait tablet and small desktops */
+@media (max-width: 980px) {
+	.movieContainer {
+		flex-direction: column;
+		& > * {
+			flex: 1 0 auto;
+		}
+
+		p, h3 {
+			text-align: center;
+		}
+	}
+
+
+	.chiliContainer {
+		flex-direction: column;
+		& > * {
+			flex: 1 0 auto;
+		}
+
+		p, h3 {
+			text-align: center;
+		}
+	}
+
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+	.questionContainer1 {
+		& > * {
+			flex: 1 0 50%;
+		}
+	}
+}
+
+/* Landscape phones and down */
+@media (max-width: 500px) {
+
+	.questionContainer1 {
+		flex-direction: column;
+		& > * {
+			flex: 1 0 auto;
+		}
+	}
+
+	.questionContainer2 {
+		flex-direction: column;
+		& > * {
+			flex: 1 0 auto;
+		}
+	}
+}
+
+@media (max-width: 480px) {
+}
+
+
