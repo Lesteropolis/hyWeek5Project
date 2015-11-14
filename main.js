@@ -29,19 +29,19 @@ var database = {
 };
 
 var sarcasm = {
-	'28': 'Action huh? Not sure if you will have any tonight...',
+	'28': 'Action huh? Everyone could use some action',
 	'35': 'Comedy? Chili IS pretty funny.',
-	'18': 'Drama? Don\'t',
-	'10751': 'Family? Did you invite your mom to watch it with you? Cute.',
-	'27': 'Horror? I would be scared to have your love life right now',
-	'10749': 'Romance? If you watch it enough, maybe it will come true'
+	'18': 'Drama? Don\'t be sad.',
+	'10751': 'You should invite your parents to watch with you.',
+	'27': 'Horror? Love is kind of scary.',
+	'10749': 'Romance is a beautiful thing.'
 }
 
 var chiliSarcasm = {
-	'notSpicy': "You don't like to live life dangerously. Makes sense.",
-	'mild': "Mild...hmmm...I feel like that's a good description of you.",
-	'spicy': "Picking grumpy cat will probably be the highlight of your night.",
-	'bringItOn': "Good attitude. Please translate this to your life."
+	'notSpicy': "You don't like to live life dangerously. Interesting.",
+	'mild': "Not everyone can walk on the wild side",
+	'spicy': "Isn't this cat cute?",
+	'bringItOn': "Good luck. At least you can enjoy the movie."
 }
 
 
@@ -59,7 +59,7 @@ movieApp.getInfo = function (userchoice){
 	}).then(function(res){
 		window.setTimeout(function(){
 			$('.alert').addClass('hidden');
-		},3000);
+		},2000);
 		var random = res.results[ Math.floor(Math.random() * res.results.length)];
 		movieApp.movieName = random.original_title;
 		movieApp.movieOverview = random.overview;
@@ -77,13 +77,13 @@ movieApp.displayPieces = function(){
 
 //Choosing chili
 movieApp.Chili = function () {
-	$('input[name="chiliLevel"').on('change',function(event){
+	$('input[name="chiliLevel"]').on('change',function(event){
 		event.preventDefault();
 		$('.alert').removeClass('hidden');
 		$('.message').text('').html('<i class="fa fa-cog fa-spin"></i>  ' + chiliSarcasm[$(this).val()]);
 		window.setTimeout(function(){
 			$('.alert').addClass('hidden');
-		},3000);
+		},2000);
 		$('section.question2 div').removeClass("selected");
 		$(this).parent().addClass("selected");
 		var answerTwo = $(this).val();
@@ -98,7 +98,7 @@ movieApp.Chili = function () {
 
 //Choosing movie
 movieApp.movieChoice = function (){
-	$('input[name="genre"').on('change', function(event){
+	$('input[name="genre"]').on('change', function(event){
 		event.preventDefault();
 		console.log($(this).parent());
 		$('section.question1 div').removeClass("selected");
@@ -144,9 +144,7 @@ movieApp.init = function () {
 //Document ready
 $(function(){
 	movieApp.init();
-	$('a.fl').featherlight({
-	    targetAttr: 'href'
-	});
+
 });
 
 

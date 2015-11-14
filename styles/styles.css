@@ -233,13 +233,12 @@ header {
 }
 
 header p {
-  font-size: 3rem;
-  padding: 0;
-  margin: 0;
+  font-size: 25px;
 }
 
-header .started {
-  margin-top: 8rem;
+header a {
+  padding-top: 1rem;
+  font-size: 15px;
 }
 
 header .started a {
@@ -270,19 +269,8 @@ header .started a:hover {
 }
 
 .headerFlex {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding: 10vh;
+  display: block;
+  padding-top: 10rem;
 }
 
 .chiliLogo img {
@@ -482,6 +470,12 @@ footer {
 
 /* Portrait tablet and small desktops */
 @media (max-width: 980px) {
+  header p {
+    font-size: 5rem;
+  }
+  header a {
+    font-size: 5rem;
+  }
   .movieContainer {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -528,30 +522,13 @@ footer {
 
 /* Landscape phones and down */
 @media (max-width: 500px) {
-  .questionContainer1 {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column;
+  header {
+    background: black;
   }
-  .questionContainer1 > * {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1 0 auto;
-        -ms-flex: 1 0 auto;
-            flex: 1 0 auto;
+  .questionContainer1 {
+    display: block;
   }
   .questionContainer2 {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .questionContainer2 > * {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1 0 auto;
-        -ms-flex: 1 0 auto;
-            flex: 1 0 auto;
+    display: block;
   }
 }

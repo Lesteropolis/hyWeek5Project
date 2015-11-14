@@ -84,16 +84,20 @@ header {
 	text-align: center;
 	// padding: 50px;
 	color: white;
+
 	p {
-		font-size: 3rem;	
-		padding:0;
-		margin: 0;
+		font-size: 25px;
+
+	}
+
+	a {
+		padding-top: 1rem;
+		font-size: 15px;
 	}
 	
-	.started {
-		margin-top: 8rem;
-	}
+	
 	.started a {
+		
 		background: #B9090B;
 		color: #fff;
 		border-radius: 10px;
@@ -122,11 +126,12 @@ header {
 }
 
 .headerFlex {
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: column;
-	padding: 10vh;
+	display: block;
+	padding-top: 10rem;
+	// padding: 10rem 0;
 }
+
+
 
 .chiliLogo {
 	img {
@@ -298,6 +303,16 @@ footer {
 //MEDIA QUERIES
 /* Portrait tablet and small desktops */
 @media (max-width: 980px) {
+	header {
+		p {
+			font-size: 5rem;	
+		}
+
+		a {
+			font-size: 5rem;
+		}
+	}
+
 	.movieContainer {
 		flex-direction: column;
 		& > * {
@@ -335,18 +350,15 @@ footer {
 /* Landscape phones and down */
 @media (max-width: 500px) {
 
+	header {
+		background: black;
+	}
 	.questionContainer1 {
-		flex-direction: column;
-		& > * {
-			flex: 1 0 auto;
-		}
+		display: block;
 	}
 
 	.questionContainer2 {
-		flex-direction: column;
-		& > * {
-			flex: 1 0 auto;
-		}
+		display: block;
 	}
 }
 
